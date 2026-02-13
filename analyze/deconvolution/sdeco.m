@@ -14,13 +14,13 @@ leda2.set.segmWidth = 12;
 leda2.analysis0 = [];
 
 %Downsample data for preanalysis, downsample if N > N_max but keep
-%samplingrate at 4 Hz minimum
+%samplingrate at 20 Hz minimum
 leda2.analysis0.target.t = leda2.data.time.data;
 leda2.analysis0.target.d = leda2.data.conductance.data;
 leda2.analysis0.target.sr = leda2.data.samplingrate;
 
-Fs_min = 4;
-N_max = 3000;
+Fs_min = 20;
+N_max = 15000;
 Fs = round(leda2.data.samplingrate);
 N = leda2.data.N;
 
@@ -43,6 +43,7 @@ if N > N_max
         leda2.analysis0.target.t = td;
         leda2.analysis0.target.d = scd;
         leda2.analysis0.target.sr = FsL(idx);
+        warning('Data downsampled to %u Hz, assuming no aliasing!',FsL(idx));
     else
         %can not be downsampled any further
     end
