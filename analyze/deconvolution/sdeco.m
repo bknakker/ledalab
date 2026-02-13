@@ -24,7 +24,7 @@ N_max = 15000;
 Fs = round(leda2.data.samplingrate);
 N = leda2.data.N;
 
-if N > N_max
+if false && N > N_max % I turned of automatic downsampling.
     factorL = divisors(Fs);
     FsL = Fs./ factorL;
     idx = find(FsL >= Fs_min);

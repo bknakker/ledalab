@@ -1,5 +1,14 @@
-Ledalab...
+Ledalab - GTRC fork
 ==========
+
+> This is a fork of the Ledalab project by Balázs Knakker with bugfixes.
+> **Please note that I am not a maintainer of this project (and apparently noone is).**
+
+It incorporates a fix of this issue: https://github.com/ledalab/ledalab/pull/4
+by prnthp (https://github.com/prnthp/ledalab).
+I also disabled automatic downsampling in the CDA analysis. 
+Here, long data could trigger automatic downsampling without any protection against
+aliasing.
 
 - is a Matlab-based software for the analysis of skin conductance data (SC; i.e., EDA, GSR).
 - can import various file formats (including BioPac, Biotrace, CassyLab, PortiLab, PsychLab, VarioPort, VisionAnalyzer, VitaPort) and provides many preprocessing functions.
