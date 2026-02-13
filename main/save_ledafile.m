@@ -7,7 +7,7 @@ end
 if ~leda2.file.open
     return
 end
-leda2.file.filename = [leda2.file.filename(1:end-4),'.mat'];
+leda2.file.filename = [leda2.file.filename(1:end-4),'_proc.mat'];
 
 if save_as
     [filename, pathname] = uiputfile([leda2.file.filename], 'Save file as ..');
